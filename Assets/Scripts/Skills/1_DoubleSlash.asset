@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bcba8e01bd5a340a75a638ca52286b, type: 3}
+  m_Name: 1_DoubleSlash
+  m_EditorClassIdentifier: 
+  SkillName: Double Slash
+  TriggerName: Double Slash
+  SkillNumber: 1
+  BaseDamage: 5.5
+  Cooldown: 4.5
+  Cancelable: 0
+  Icon: {fileID: 593559950, guid: da9630803a7adb5409288331e8e5ead9, type: 3}

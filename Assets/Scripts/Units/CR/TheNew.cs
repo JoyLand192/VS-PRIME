@@ -1,0 +1,144 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class TheNew : CR
+{
+    private int meleeProgress = 1;
+    public int MeleeProgress
+    {
+        get => meleeProgress;
+        set
+        {
+            anim.SetInteger("meleeProgress", value);
+            meleeProgress = value;
+        }
+    }
+    float meleeTimer = 0;
+    float meleeTimeLimit;
+    enum SkillSet { DoubleSlash, PsychicAssault };
+    [SerializeField] GameObject particle_prefab_ds;
+
+    protected override void Init()
+    {
+        base.Init();
+
+        speedCR = 13.3f;
+        damageBase = 50f;
+        jumpPower = 17f;
+        maxGravity = 30f;
+        abilityHaste = 0f;
+        meleeTimeLimit = 1.2f;
+        GameManager.Instance.EquipSkill(GetSkill(1));
+        GameManager.Instance.EquipSkill(GetSkill(2));
+
+        skillEquippedList.Add(KeyCode.D, GetSkill(1));
+        skillEquippedList.Add(KeyCode.S, GetSkill(2));
+        skillKeys.Add(KeyCode.D);
+        skillKeys.Add(KeyCode.S);
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        meleeTimer += Time.deltaTime;
+        if (meleeTimer > meleeTimeLimit) meleeProgress = 1;
+    }
+
+    public void DoubleSlash_HitTest()
+    {
+        float DSDamage = GetSkill(1).BaseDamage * damageCR;
+        Vector2 curPos = transform.position;
+        Collider2D[] colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(1.3f * direction, -1), curPos + new Vector2(-0.7f * direction, 1), LayerMask.GetMask("E-Units"));
+        Vector2 DS_CenterPos = new Vector2();
+
+        foreach (Collider2D E_UnitsHit in colliders)
+        {
+            DS_CenterPos += (Vector2)E_UnitsHit.transform.position;
+            E_UnitsHit.transform.GetComponent<EUnits>().GetDamaged(DSDamage);
+            GenSkillEffect((int)SkillSet.DoubleSlash, E_UnitsHit.transform.localPosition);
+
+            UltimateAmount += 3.5f;
+            ParticleSystem pps = Instantiate(particle_prefab_ds, E_UnitsHit.transform.localPosition, Quaternion.identity).GetComponent<ParticleSystem>();
+            pps.Play();
+            Destroy(pps.gameObject, 2f);
+        }
+
+        if (colliders.Length > 0)
+        {
+            DS_CenterPos /= colliders.Length;
+            CallSfx("Damage");
+        }
+    }
+
+    public void PsychicAssault_HitTest()
+    {
+        float DSDamage = GetSkill(2).BaseDamage * damageCR;
+        float dis = 2.5f * direction;
+        Vector2 curPos = transform.position;
+
+        Collider2D[] colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(dis * 2.4f, -1), curPos + new Vector2(0, 2.1f), LayerMask.GetMask("E-Units"));
+
+        foreach (Collider2D E_UnitsHit in colliders)
+        {
+            E_UnitsHit.transform.GetComponent<EUnits>().GetDamaged(DSDamage);
+            GenSkillEffect((int)SkillSet.PsychicAssault, E_UnitsHit.transform.localPosition);
+            UltimateAmount += 2f;
+        }
+
+        if (colliders.Length > 0)
+        {
+            CallSfx("Damage");
+        }
+
+        Instantiate(effectManager.LoadEtcEffect(1), transform.localPosition, Quaternion.identity);
+        Instantiate(effectManager.LoadEtcEffect(3), transform.localPosition + new Vector3(dis, 0), Quaternion.identity);
+
+        StartCoroutine(PsychicAssault_Disappear());
+        
+    }
+
+    IEnumerator PsychicAssault_Disappear()
+    {
+        float tmp = anim.speed;
+        float patime = 0f;
+        float tmp2 = direction;
+        anim.speed = 0f;
+        box.enabled = false;
+        render.enabled = false;
+        rb.isKinematic = true;
+        CallSfx("Taat", 40f);
+
+        while (patime < 0.16f)
+        {
+            float T_dashingDistance = tmp2 * 44f * Time.deltaTime;
+            
+            RaycastHit2D platformsOnForward = Physics2D.Raycast(transform.position + new Vector3(T_dashingDistance + 0.3f, -0.8f), Vector2.up, 1.6f, LayerMask.GetMask("Platforms"));
+            Debug.DrawRay(transform.position + new Vector3(T_dashingDistance + 0.3f, -0.8f), Vector2.up * 1.6f, Color.cyan);
+            Debug.DrawRay(transform.position, Vector2.right * T_dashingDistance, Color.blue);
+            
+            if (platformsOnForward.collider == null) transform.localPosition += new Vector3(T_dashingDistance, 0);
+
+            patime += Time.deltaTime;
+            yield return null;
+        }
+
+        rb.isKinematic = false;
+        box.enabled = true;
+        anim.speed = tmp;
+        render.enabled = true;
+
+        CallSfx("TP", 40f);
+    }
+
+    void GenSkillEffect(int SkillNum, Vector3 Pos)
+    {
+        Vector3 RandomPos = new Vector3(UnityEngine.Random.Range(-0.3f, 0.3f), UnityEngine.Random.Range(-0.3f, 0.3f), 0);
+        Instantiate(effectManager.LoadSkillEffect(SkillNum), Pos + RandomPos, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0f, 360f)));
+    }
+}

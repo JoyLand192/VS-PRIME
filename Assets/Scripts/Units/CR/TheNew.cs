@@ -35,7 +35,7 @@ public class TheNew : CR
         jumpPower = 17f;
         maxGravity = 30f;
         abilityHaste = 0f;
-        meleeTimeLimit = 1.5f;
+        meleeTimeLimit = 0.72f;
         GameManager.Instance.EquipSkill(GetSkill(1));
         GameManager.Instance.EquipSkill(GetSkill(2));
 
@@ -85,7 +85,7 @@ public class TheNew : CR
                     }
                 case 4:
                     {
-                        colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0.2f * direction, -1), curPos + new Vector2(2f * direction, 1.5f), LayerMask.GetMask("E-Units"));
+                        colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0.2f * direction, -1), curPos + new Vector2(2f * direction, 1.77f), LayerMask.GetMask("E-Units"));
                         break;
                     }
             }
@@ -94,8 +94,8 @@ public class TheNew : CR
             {
                 foreach (var hit in colliders)
                 {
-                    if (hit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(damageCR);
-                    //GenSkillEffect(effect, hit.transform.position);
+                    if (hit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(MeleeProgress < 3 ? damageCR : damageCR * 1.7f);
+                    GenSkillEffect(2, hit.transform.position);
                 }
                 if (colliders.Length > 0)
                 {
@@ -134,7 +134,7 @@ public class TheNew : CR
     public IEnumerator Melee3Dash()
     {
         dashing = true;
-        float dashDistance = 8f;
+        float dashDistance = 5f;
         var startPosition = transform.position;
         var destination = transform.position + new Vector3(direction * dashDistance, 0);
         float t = 0;

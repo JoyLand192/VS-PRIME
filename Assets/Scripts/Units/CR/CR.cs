@@ -161,6 +161,7 @@ public class CR : MonoBehaviour
 
     protected void GetDirection()
     {
+        if (!canMove) return;
         if (Input.GetKey(KeyCode.RightArrow)) direction = 1;
         else if (Input.GetKey(KeyCode.LeftArrow)) direction = -1;
     }

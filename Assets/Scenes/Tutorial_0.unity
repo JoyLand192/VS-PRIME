@@ -8186,6 +8186,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f84d2ba037c2447409b874cf46686376, type: 3}
   - {fileID: 8300000, guid: 70540ac8e94a9864795500fce60f74fc, type: 3}
   - {fileID: 8300000, guid: c9873e961df74b549819654e39a20c3e, type: 3}
+  - {fileID: 8300000, guid: 5bf3933848eea3542a0a83ebee6fb68f, type: 3}
+  - {fileID: 8300000, guid: ad095896336ad0d4a8540fd069458a1b, type: 3}
+  - {fileID: 8300000, guid: ca5bdbe69f356d64fb967f45c1e294c5, type: 3}
+  - {fileID: 8300000, guid: 3b8944a8fd3570d4bb5b05549ebfd056, type: 3}
+  - {fileID: 8300000, guid: 03cea31ba6df9c54d9ea7d05f13e06c5, type: 3}
+  - {fileID: 8300000, guid: dd231cf8fa6611c4ca189bb3ce4af134, type: 3}
   SfxChannels: []
 --- !u!4 &2130936301
 Transform:

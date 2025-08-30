@@ -58,19 +58,24 @@ public class TheNew : CR
 
             anim.ResetTrigger("WALK");
             stateCR = State.Channeling;
+            canMove = false;
             rb.velocity = new Vector2(0, rb.velocity.y);
 
             anim.SetTrigger("MeleeTrigger");
             meleeTimer = 0;
 
+            Collider2D[] colliders = null;
+            Vector2 curPos = transform.position;
             switch (MeleeProgress)
             {
                 case 1:
                     {
+                        colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-0.28f * direction, -1), curPos + new Vector2(2.6f * direction, 1), LayerMask.GetMask("E-Units"));
                         break;
                     }
                 case 2:
                     {
+                        colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0, -1), curPos + new Vector2(3.2f * direction, 1), LayerMask.GetMask("E-Units"));
                         break;
                     }
                 case 3:
@@ -80,9 +85,49 @@ public class TheNew : CR
                     }
                 case 4:
                     {
+                        colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0.2f * direction, -1), curPos + new Vector2(2f * direction, 1.5f), LayerMask.GetMask("E-Units"));
                         break;
                     }
             }
+
+            if (MeleeProgress != 3 && colliders != null)
+            {
+                foreach (var hit in colliders)
+                {
+                    if (hit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(damageCR);
+                    //GenSkillEffect(effect, hit.transform.position);
+                }
+                if (colliders.Length > 0)
+                {
+                    int t = UnityEngine.Random.Range(1, 5);
+                    string s;
+                    switch (t)
+                    {
+                        case 1:
+                            {
+                                s = "Punch1";
+                                break;
+                            }
+                        case 2:
+                            {
+                                s = "Punch2";
+                                break;
+                            }
+                        case 3:
+                            {
+                                s = "Kick1";
+                                break;
+                            }
+                        default:
+                            {
+                                s = "Kick2";
+                                break;
+                            }
+                    }
+                    CallSfx(s);
+                }
+            }
+
             Debug.Log($"Melee {MeleeProgress}");
         }
     }
@@ -94,7 +139,7 @@ public class TheNew : CR
         var destination = transform.position + new Vector3(direction * dashDistance, 0);
         float t = 0;
         float duration = 0.3f;
-        while ( t < duration )
+        while (t < duration)
         {
             float f = Mathf.Clamp01(t / duration);
             float outCircEase = Mathf.Sqrt(1f - Mathf.Pow(f - 1f, 2f));
@@ -123,7 +168,7 @@ public class TheNew : CR
 
     public void UpdateMeleeProgress()
     {
-        MeleeProgress = (MeleeProgress) % 4 + 1;
+        MeleeProgress = MeleeProgress % 4 + 1;
     }
 
     public void DoubleSlash_HitTest()
@@ -136,7 +181,7 @@ public class TheNew : CR
         foreach (Collider2D E_UnitsHit in colliders)
         {
             DS_CenterPos += (Vector2)E_UnitsHit.transform.position;
-            E_UnitsHit.transform.GetComponent<EUnits>().GetDamaged(DSDamage);
+            if (E_UnitsHit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(DSDamage);
             GenSkillEffect((int)SkillSet.DoubleSlash, E_UnitsHit.transform.localPosition);
 
             UltimateAmount += 3.5f;
@@ -176,7 +221,7 @@ public class TheNew : CR
         Instantiate(effectManager.LoadEtcEffect(3), transform.localPosition + new Vector3(dis, 0), Quaternion.identity);
 
         StartCoroutine(PsychicAssault_Disappear());
-        
+
     }
 
     IEnumerator PsychicAssault_Disappear()
@@ -193,11 +238,11 @@ public class TheNew : CR
         while (patime < 0.16f)
         {
             float T_dashingDistance = tmp2 * 44f * Time.deltaTime;
-            
+
             RaycastHit2D platformsOnForward = Physics2D.Raycast(transform.position + new Vector3(T_dashingDistance + 0.3f, -0.8f), Vector2.up, 1.6f, LayerMask.GetMask("Platforms"));
             Debug.DrawRay(transform.position + new Vector3(T_dashingDistance + 0.3f, -0.8f), Vector2.up * 1.6f, Color.cyan);
             Debug.DrawRay(transform.position, Vector2.right * T_dashingDistance, Color.blue);
-            
+
             if (platformsOnForward.collider == null) transform.localPosition += new Vector3(T_dashingDistance, 0);
 
             patime += Time.deltaTime;

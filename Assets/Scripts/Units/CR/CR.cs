@@ -22,6 +22,7 @@ public class CR : MonoBehaviour
     protected Dictionary<KeyCode, Skill> skillEquippedList = new Dictionary<KeyCode, Skill>();
     protected List<KeyCode> skillKeys = new();
     protected Vector3 currentVelocity;
+    protected bool dashing = false;
     protected Image ultimateCharge
     {
         get
@@ -135,7 +136,7 @@ public class CR : MonoBehaviour
             {
                 if (skillEquippedList.TryGetValue(key, out Skill value) && value != null)
                 {
-                    if (!canMove && !value.Cancelable || cooldownSet.Contains(value)) { Debug.Log($"{{ {value.SkillName} 스킬을 아직 사용할 수 없습니다. }}"); return; }
+                    if (dashing || !canMove && !value.Cancelable || cooldownSet.Contains(value)) { Debug.Log($"{{ {value.SkillName} 스킬을 아직 사용할 수 없습니다. }}"); return; }
                     ChannelSkillCast(value);
                     canMove = false;
                 }

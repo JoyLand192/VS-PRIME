@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2719603595436602156}
   - component: {fileID: 2137888218377880816}
   - component: {fileID: 4312177143484738758}
+  - component: {fileID: 4401739969963254424}
   m_Layer: 0
   m_Name: Melee3
   m_TagString: Untagged
@@ -106,3 +107,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4401739969963254424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328846654500959906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b34254c64e012442b21c7e2258325a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

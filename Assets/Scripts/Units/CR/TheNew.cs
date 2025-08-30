@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class TheNew : CR
 {
+    GameObject curMeleeEffect;
     [SerializeField] private int meleeProgress = 1;
     public int MeleeProgress
     {
@@ -34,7 +35,7 @@ public class TheNew : CR
         jumpPower = 17f;
         maxGravity = 30f;
         abilityHaste = 0f;
-        meleeTimeLimit = 1f;
+        meleeTimeLimit = 1.5f;
         GameManager.Instance.EquipSkill(GetSkill(1));
         GameManager.Instance.EquipSkill(GetSkill(2));
 
@@ -61,12 +62,63 @@ public class TheNew : CR
 
             anim.SetTrigger("MeleeTrigger");
             meleeTimer = 0;
+
+            switch (MeleeProgress)
+            {
+                case 1:
+                    {
+                        break;
+                    }
+                case 2:
+                    {
+                        break;
+                    }
+                case 3:
+                    {
+                        StartCoroutine(Melee3Dash());
+                        break;
+                    }
+                case 4:
+                    {
+                        break;
+                    }
+            }
+            Debug.Log($"Melee {MeleeProgress}");
         }
     }
+    public IEnumerator Melee3Dash()
+    {
+        dashing = true;
+        float dashDistance = 8f;
+        var startPosition = transform.position;
+        var destination = transform.position + new Vector3(direction * dashDistance, 0);
+        float t = 0;
+        float duration = 0.3f;
+        while ( t < duration )
+        {
+            float f = Mathf.Clamp01(t / duration);
+            float outCircEase = Mathf.Sqrt(1f - Mathf.Pow(f - 1f, 2f));
 
+            RaycastHit2D platformsOnForward = Physics2D.Raycast(transform.position + new Vector3(outCircEase * dashDistance + 0.3f, -0.8f), Vector2.up, 1.6f, LayerMask.GetMask("Platforms"));
+            Debug.DrawRay(transform.position + new Vector3(outCircEase * dashDistance + 0.3f, -0.8f), Vector2.up * 1.6f, Color.cyan);
+            Debug.DrawRay(transform.position, Vector2.right * outCircEase * dashDistance, Color.blue);
+
+            if (platformsOnForward.collider == null) transform.position = Vector3.Lerp(startPosition, destination, outCircEase);
+
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        anim.SetTrigger("Melee3End");
+        if (curMeleeEffect == null) yield break;
+        curMeleeEffect.GetComponent<Animator>().SetTrigger("isEnd");
+        dashing = false;
+
+        yield return null;
+    }
     public void MeleeEffGen()
     {
-        var T_MeleeEffect = Instantiate(meleeEffectPrefabs[MeleeProgress - 1], transform);
+        curMeleeEffect = Instantiate(meleeEffectPrefabs[MeleeProgress - 1], transform);
     }
 
     public void UpdateMeleeProgress()

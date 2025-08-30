@@ -101,7 +101,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 280
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -121,8 +121,8 @@ TextureImporter:
       name: the new-3t_1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 280
+        x: 70
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -142,8 +142,8 @@ TextureImporter:
       name: the new-3t_2
       rect:
         serializedVersion: 2
-        x: 134
-        y: 280
+        x: 140
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -163,8 +163,8 @@ TextureImporter:
       name: the new-3t_3
       rect:
         serializedVersion: 2
-        x: 201
-        y: 280
+        x: 210
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -184,8 +184,8 @@ TextureImporter:
       name: the new-3t_4
       rect:
         serializedVersion: 2
-        x: 268
-        y: 280
+        x: 280
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -205,8 +205,8 @@ TextureImporter:
       name: the new-3t_5
       rect:
         serializedVersion: 2
-        x: 335
-        y: 280
+        x: 350
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -226,8 +226,8 @@ TextureImporter:
       name: the new-3t_6
       rect:
         serializedVersion: 2
-        x: 402
-        y: 280
+        x: 420
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -247,8 +247,8 @@ TextureImporter:
       name: the new-3t_7
       rect:
         serializedVersion: 2
-        x: 469
-        y: 280
+        x: 490
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -268,8 +268,8 @@ TextureImporter:
       name: the new-3t_8
       rect:
         serializedVersion: 2
-        x: 536
-        y: 280
+        x: 560
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -289,8 +289,8 @@ TextureImporter:
       name: the new-3t_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 245
+        x: 630
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -310,8 +310,8 @@ TextureImporter:
       name: the new-3t_10
       rect:
         serializedVersion: 2
-        x: 67
-        y: 245
+        x: 700
+        y: 304
         width: 64
         height: 32
       alignment: 0
@@ -331,8 +331,8 @@ TextureImporter:
       name: the new-3t_11
       rect:
         serializedVersion: 2
-        x: 134
-        y: 245
+        x: 0
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -352,8 +352,8 @@ TextureImporter:
       name: the new-3t_12
       rect:
         serializedVersion: 2
-        x: 201
-        y: 245
+        x: 70
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -373,8 +373,8 @@ TextureImporter:
       name: the new-3t_13
       rect:
         serializedVersion: 2
-        x: 268
-        y: 245
+        x: 140
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -394,8 +394,8 @@ TextureImporter:
       name: the new-3t_14
       rect:
         serializedVersion: 2
-        x: 335
-        y: 245
+        x: 210
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -415,8 +415,8 @@ TextureImporter:
       name: the new-3t_15
       rect:
         serializedVersion: 2
-        x: 402
-        y: 245
+        x: 280
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -436,8 +436,8 @@ TextureImporter:
       name: the new-3t_16
       rect:
         serializedVersion: 2
-        x: 469
-        y: 245
+        x: 350
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -457,8 +457,8 @@ TextureImporter:
       name: the new-3t_17
       rect:
         serializedVersion: 2
-        x: 536
-        y: 245
+        x: 420
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -478,8 +478,8 @@ TextureImporter:
       name: the new-3t_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 210
+        x: 490
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -499,8 +499,8 @@ TextureImporter:
       name: the new-3t_19
       rect:
         serializedVersion: 2
-        x: 67
-        y: 210
+        x: 560
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -520,8 +520,8 @@ TextureImporter:
       name: the new-3t_20
       rect:
         serializedVersion: 2
-        x: 134
-        y: 210
+        x: 630
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -541,8 +541,8 @@ TextureImporter:
       name: the new-3t_21
       rect:
         serializedVersion: 2
-        x: 201
-        y: 210
+        x: 700
+        y: 266
         width: 64
         height: 32
       alignment: 0
@@ -562,8 +562,8 @@ TextureImporter:
       name: the new-3t_22
       rect:
         serializedVersion: 2
-        x: 268
-        y: 210
+        x: 0
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -583,8 +583,8 @@ TextureImporter:
       name: the new-3t_23
       rect:
         serializedVersion: 2
-        x: 335
-        y: 210
+        x: 70
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -604,8 +604,8 @@ TextureImporter:
       name: the new-3t_24
       rect:
         serializedVersion: 2
-        x: 402
-        y: 210
+        x: 140
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -625,8 +625,8 @@ TextureImporter:
       name: the new-3t_25
       rect:
         serializedVersion: 2
-        x: 469
-        y: 210
+        x: 210
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -646,8 +646,8 @@ TextureImporter:
       name: the new-3t_26
       rect:
         serializedVersion: 2
-        x: 536
-        y: 210
+        x: 280
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -667,8 +667,8 @@ TextureImporter:
       name: the new-3t_27
       rect:
         serializedVersion: 2
-        x: 0
-        y: 175
+        x: 350
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -688,8 +688,8 @@ TextureImporter:
       name: the new-3t_28
       rect:
         serializedVersion: 2
-        x: 67
-        y: 175
+        x: 420
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -709,8 +709,8 @@ TextureImporter:
       name: the new-3t_29
       rect:
         serializedVersion: 2
-        x: 134
-        y: 175
+        x: 490
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -730,8 +730,8 @@ TextureImporter:
       name: the new-3t_30
       rect:
         serializedVersion: 2
-        x: 201
-        y: 175
+        x: 560
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -751,8 +751,8 @@ TextureImporter:
       name: the new-3t_31
       rect:
         serializedVersion: 2
-        x: 268
-        y: 175
+        x: 630
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -772,8 +772,8 @@ TextureImporter:
       name: the new-3t_32
       rect:
         serializedVersion: 2
-        x: 335
-        y: 175
+        x: 700
+        y: 228
         width: 64
         height: 32
       alignment: 0
@@ -793,8 +793,8 @@ TextureImporter:
       name: the new-3t_33
       rect:
         serializedVersion: 2
-        x: 402
-        y: 175
+        x: 0
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -814,8 +814,8 @@ TextureImporter:
       name: the new-3t_34
       rect:
         serializedVersion: 2
-        x: 469
-        y: 175
+        x: 70
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -835,8 +835,8 @@ TextureImporter:
       name: the new-3t_35
       rect:
         serializedVersion: 2
-        x: 536
-        y: 175
+        x: 140
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -856,8 +856,8 @@ TextureImporter:
       name: the new-3t_36
       rect:
         serializedVersion: 2
-        x: 0
-        y: 140
+        x: 210
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -877,8 +877,8 @@ TextureImporter:
       name: the new-3t_37
       rect:
         serializedVersion: 2
-        x: 67
-        y: 140
+        x: 280
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -898,8 +898,8 @@ TextureImporter:
       name: the new-3t_38
       rect:
         serializedVersion: 2
-        x: 134
-        y: 140
+        x: 350
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -919,8 +919,8 @@ TextureImporter:
       name: the new-3t_39
       rect:
         serializedVersion: 2
-        x: 201
-        y: 140
+        x: 420
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -940,8 +940,8 @@ TextureImporter:
       name: the new-3t_40
       rect:
         serializedVersion: 2
-        x: 268
-        y: 140
+        x: 490
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -961,8 +961,8 @@ TextureImporter:
       name: the new-3t_41
       rect:
         serializedVersion: 2
-        x: 335
-        y: 140
+        x: 560
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -982,8 +982,8 @@ TextureImporter:
       name: the new-3t_42
       rect:
         serializedVersion: 2
-        x: 402
-        y: 140
+        x: 630
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -1003,8 +1003,8 @@ TextureImporter:
       name: the new-3t_43
       rect:
         serializedVersion: 2
-        x: 469
-        y: 140
+        x: 700
+        y: 190
         width: 64
         height: 32
       alignment: 0
@@ -1024,8 +1024,8 @@ TextureImporter:
       name: the new-3t_44
       rect:
         serializedVersion: 2
-        x: 536
-        y: 140
+        x: 0
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1045,8 +1045,8 @@ TextureImporter:
       name: the new-3t_45
       rect:
         serializedVersion: 2
-        x: 0
-        y: 105
+        x: 70
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1066,8 +1066,8 @@ TextureImporter:
       name: the new-3t_46
       rect:
         serializedVersion: 2
-        x: 67
-        y: 105
+        x: 140
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1087,8 +1087,8 @@ TextureImporter:
       name: the new-3t_47
       rect:
         serializedVersion: 2
-        x: 134
-        y: 105
+        x: 210
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1108,8 +1108,8 @@ TextureImporter:
       name: the new-3t_48
       rect:
         serializedVersion: 2
-        x: 201
-        y: 105
+        x: 280
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1129,8 +1129,8 @@ TextureImporter:
       name: the new-3t_49
       rect:
         serializedVersion: 2
-        x: 268
-        y: 105
+        x: 350
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1150,8 +1150,8 @@ TextureImporter:
       name: the new-3t_50
       rect:
         serializedVersion: 2
-        x: 335
-        y: 105
+        x: 420
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1171,8 +1171,8 @@ TextureImporter:
       name: the new-3t_51
       rect:
         serializedVersion: 2
-        x: 402
-        y: 105
+        x: 490
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1192,8 +1192,8 @@ TextureImporter:
       name: the new-3t_52
       rect:
         serializedVersion: 2
-        x: 469
-        y: 105
+        x: 560
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1213,8 +1213,8 @@ TextureImporter:
       name: the new-3t_53
       rect:
         serializedVersion: 2
-        x: 536
-        y: 105
+        x: 630
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1234,8 +1234,8 @@ TextureImporter:
       name: the new-3t_54
       rect:
         serializedVersion: 2
-        x: 0
-        y: 70
+        x: 700
+        y: 152
         width: 64
         height: 32
       alignment: 0
@@ -1255,8 +1255,8 @@ TextureImporter:
       name: the new-3t_55
       rect:
         serializedVersion: 2
-        x: 67
-        y: 70
+        x: 0
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1276,8 +1276,8 @@ TextureImporter:
       name: the new-3t_56
       rect:
         serializedVersion: 2
-        x: 134
-        y: 70
+        x: 70
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1297,8 +1297,8 @@ TextureImporter:
       name: the new-3t_57
       rect:
         serializedVersion: 2
-        x: 201
-        y: 70
+        x: 140
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1318,8 +1318,8 @@ TextureImporter:
       name: the new-3t_58
       rect:
         serializedVersion: 2
-        x: 268
-        y: 70
+        x: 210
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1339,8 +1339,8 @@ TextureImporter:
       name: the new-3t_59
       rect:
         serializedVersion: 2
-        x: 335
-        y: 70
+        x: 280
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1360,8 +1360,8 @@ TextureImporter:
       name: the new-3t_60
       rect:
         serializedVersion: 2
-        x: 402
-        y: 70
+        x: 350
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1381,8 +1381,8 @@ TextureImporter:
       name: the new-3t_61
       rect:
         serializedVersion: 2
-        x: 469
-        y: 70
+        x: 420
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1402,8 +1402,8 @@ TextureImporter:
       name: the new-3t_62
       rect:
         serializedVersion: 2
-        x: 536
-        y: 70
+        x: 490
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1423,8 +1423,8 @@ TextureImporter:
       name: the new-3t_63
       rect:
         serializedVersion: 2
-        x: 0
-        y: 35
+        x: 560
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1444,8 +1444,8 @@ TextureImporter:
       name: the new-3t_64
       rect:
         serializedVersion: 2
-        x: 67
-        y: 35
+        x: 630
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1465,8 +1465,8 @@ TextureImporter:
       name: the new-3t_65
       rect:
         serializedVersion: 2
-        x: 134
-        y: 35
+        x: 700
+        y: 114
         width: 64
         height: 32
       alignment: 0
@@ -1486,8 +1486,8 @@ TextureImporter:
       name: the new-3t_66
       rect:
         serializedVersion: 2
-        x: 201
-        y: 35
+        x: 0
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1507,8 +1507,8 @@ TextureImporter:
       name: the new-3t_67
       rect:
         serializedVersion: 2
-        x: 268
-        y: 35
+        x: 70
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1528,8 +1528,8 @@ TextureImporter:
       name: the new-3t_68
       rect:
         serializedVersion: 2
-        x: 335
-        y: 35
+        x: 140
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1549,8 +1549,8 @@ TextureImporter:
       name: the new-3t_69
       rect:
         serializedVersion: 2
-        x: 402
-        y: 35
+        x: 210
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1570,8 +1570,8 @@ TextureImporter:
       name: the new-3t_70
       rect:
         serializedVersion: 2
-        x: 469
-        y: 35
+        x: 280
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1591,8 +1591,8 @@ TextureImporter:
       name: the new-3t_71
       rect:
         serializedVersion: 2
-        x: 536
-        y: 35
+        x: 350
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1612,8 +1612,8 @@ TextureImporter:
       name: the new-3t_72
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 420
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1633,8 +1633,8 @@ TextureImporter:
       name: the new-3t_73
       rect:
         serializedVersion: 2
-        x: 67
-        y: 0
+        x: 490
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1654,8 +1654,8 @@ TextureImporter:
       name: the new-3t_74
       rect:
         serializedVersion: 2
-        x: 134
-        y: 0
+        x: 560
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1675,8 +1675,8 @@ TextureImporter:
       name: the new-3t_75
       rect:
         serializedVersion: 2
-        x: 201
-        y: 0
+        x: 630
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1696,8 +1696,8 @@ TextureImporter:
       name: the new-3t_76
       rect:
         serializedVersion: 2
-        x: 268
-        y: 0
+        x: 700
+        y: 76
         width: 64
         height: 32
       alignment: 0
@@ -1717,8 +1717,8 @@ TextureImporter:
       name: the new-3t_77
       rect:
         serializedVersion: 2
-        x: 335
-        y: 0
+        x: 0
+        y: 38
         width: 64
         height: 32
       alignment: 0
@@ -1738,8 +1738,8 @@ TextureImporter:
       name: the new-3t_78
       rect:
         serializedVersion: 2
-        x: 402
-        y: 0
+        x: 70
+        y: 38
         width: 64
         height: 32
       alignment: 0
@@ -1751,6 +1751,405 @@ TextureImporter:
       bones: []
       spriteID: 8144b82a57f7d374fa40f3b79fb96f6b
       internalID: 156236791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_79
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d52f7670ec5d641bee8eedc2aa5121
+      internalID: -1050965459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_80
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0232ea72d1688ba46acb25eaa22bf66f
+      internalID: 1343897881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_81
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b761c278a36595842b187ef0365aa61c
+      internalID: -340283212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_82
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bf127b781195d4d822774ac230864c
+      internalID: 1564236323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_83
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb674531858ae7d428a6353e10b9187f
+      internalID: 2057645476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_84
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382c5c0a2b7a3be42b91237bc997615d
+      internalID: -247509669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_85
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13985ee8c03d58d42be670b30737612d
+      internalID: 677954099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_86
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f4675b3a9433b49a94029368c62a4b
+      internalID: 52524721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_87
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 38
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98aaee890d066434b86e82c89abf0f6e
+      internalID: -756279093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7edbf34a9e6c8745a9cf1b74ffa537a
+      internalID: -1209927506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_89
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5001a0728301c442a7994514af6c4ee
+      internalID: 62625339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_90
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3dff0881a0e894691129829d42d014
+      internalID: -1054765004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_91
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49009de5faf29e4795872f921bdfad7
+      internalID: -958711966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_92
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184de1a0e770b17419afec3727eff4bf
+      internalID: 1594018940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_93
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c89bbab853e2b439b7085eeae2055a
+      internalID: 991816257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_94
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5de1cde566e7ea4899c12d88d974eb8
+      internalID: -2146631300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_95
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70dfb5ae30332664cb1db895ac72b458
+      internalID: 1896090558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_96
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b398b6cd3c104418a514b86cab915f
+      internalID: 942430459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: the new-3t_97
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3964d0b6107f9c41a184981b04f3bad
+      internalID: 399929878
       vertices: []
       indices: 
       edges: []
@@ -1843,8 +2242,27 @@ TextureImporter:
       the new-3t_76: -1422048485
       the new-3t_77: 491542668
       the new-3t_78: 156236791
+      the new-3t_79: -1050965459
       the new-3t_8: -2051547786
+      the new-3t_80: 1343897881
+      the new-3t_81: -340283212
+      the new-3t_82: 1564236323
+      the new-3t_83: 2057645476
+      the new-3t_84: -247509669
+      the new-3t_85: 677954099
+      the new-3t_86: 52524721
+      the new-3t_87: -756279093
+      the new-3t_88: -1209927506
+      the new-3t_89: 62625339
       the new-3t_9: -1240895392
+      the new-3t_90: -1054765004
+      the new-3t_91: -958711966
+      the new-3t_92: 1594018940
+      the new-3t_93: 991816257
+      the new-3t_94: -2146631300
+      the new-3t_95: 1896090558
+      the new-3t_96: 942430459
+      the new-3t_97: 399929878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

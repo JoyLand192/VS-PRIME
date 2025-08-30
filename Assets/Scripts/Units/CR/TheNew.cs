@@ -8,20 +8,22 @@ using UnityEngine.UI;
 
 public class TheNew : CR
 {
-    private int meleeProgress = 1;
+    [SerializeField] private int meleeProgress = 1;
     public int MeleeProgress
     {
         get => meleeProgress;
         set
         {
-            anim.SetInteger("meleeProgress", value);
+            anim.SetInteger("MeleeProgress", value);
             meleeProgress = value;
         }
     }
-    float meleeTimer = 0;
-    float meleeTimeLimit;
+    public float meleeTimer = 0;
+    public float meleeTimeLimit;
     enum SkillSet { DoubleSlash, PsychicAssault };
+    [SerializeField] KeyCode meleeKey = KeyCode.A;
     [SerializeField] GameObject particle_prefab_ds;
+    [SerializeField] GameObject[] meleeEffectPrefabs;
 
     protected override void Init()
     {
@@ -32,7 +34,7 @@ public class TheNew : CR
         jumpPower = 17f;
         maxGravity = 30f;
         abilityHaste = 0f;
-        meleeTimeLimit = 1.2f;
+        meleeTimeLimit = 1f;
         GameManager.Instance.EquipSkill(GetSkill(1));
         GameManager.Instance.EquipSkill(GetSkill(2));
 
@@ -47,7 +49,29 @@ public class TheNew : CR
         base.Update();
 
         meleeTimer += Time.deltaTime;
-        if (meleeTimer > meleeTimeLimit) meleeProgress = 1;
+        if (meleeTimer > meleeTimeLimit) { MeleeProgress = 1; meleeTimer = 0; }
+
+        if (Input.GetKeyDown(meleeKey))
+        {
+            if (canMove == false) return;
+
+            anim.ResetTrigger("WALK");
+            stateCR = State.Channeling;
+            rb.velocity = new Vector2(0, rb.velocity.y);
+
+            anim.SetTrigger("MeleeTrigger");
+            meleeTimer = 0;
+        }
+    }
+
+    public void MeleeEffGen()
+    {
+        var T_MeleeEffect = Instantiate(meleeEffectPrefabs[MeleeProgress - 1], transform);
+    }
+
+    public void UpdateMeleeProgress()
+    {
+        MeleeProgress = (MeleeProgress) % 4 + 1;
     }
 
     public void DoubleSlash_HitTest()

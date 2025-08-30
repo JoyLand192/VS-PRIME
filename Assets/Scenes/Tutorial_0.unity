@@ -169,7 +169,16 @@ MonoBehaviour:
   damageBase: 0
   damageCR: 0
   direction: 0
+  meleeProgress: 1
+  meleeTimer: 0
+  meleeTimeLimit: 0
+  meleeKey: 97
   particle_prefab_ds: {fileID: 3613669102188821411, guid: 3e74c0fbb984d4c4f9ab48c012baed87, type: 3}
+  meleeEffectPrefabs:
+  - {fileID: 1952698766906429911, guid: eb24b3287cfa35e4499e597bf299870c, type: 3}
+  - {fileID: 3437624003118967997, guid: 24dca7c1e09813e4d8d8d7f74e93367c, type: 3}
+  - {fileID: 328846654500959906, guid: acf0d27829ddaeb438e8ad667293efa3, type: 3}
+  - {fileID: 3882279136315382654, guid: 60fe567147504304093073087b2f46f9, type: 3}
 --- !u!114 &69206693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,10 +191,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryHash: 1.18247915e-23
+  m_CategoryHash: 0.009161512
   m_labelHash: 0.00000040954276
   m_SpriteKey: 0
-  m_SpriteHash: 465855431
+  m_SpriteHash: 288431053
 --- !u!114 &69206694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +343,7 @@ SpriteRenderer:
   m_SortingLayerID: -1943703295
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -175143284, guid: e6608538f532db44282339199dc757e2, type: 3}
+  m_Sprite: {fileID: 1159344837, guid: e6608538f532db44282339199dc757e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

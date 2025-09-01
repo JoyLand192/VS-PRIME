@@ -40,6 +40,12 @@ public class DebugButtonManager : MonoBehaviour
         Object Mushroom = Instantiate(unitManager.LoadMob(1), new Vector3(0, 3, 0), Quaternion.identity);
         Mushroom.name = $"Orange Mushroom {test}";
     }
+    public void SummonSpikyMushroom()
+    {
+        test++;
+        Object Mushroom = Instantiate(unitManager.LoadMob(2), new Vector3(0, 3, 0), Quaternion.identity);
+        Mushroom.name = $"Orange Mushroom {test}";
+    }
     public void HalfUlti()
     {
         cr.UltimateAmount += 50f;

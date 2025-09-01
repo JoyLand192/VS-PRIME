@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class TheNew : CR
 {
+    GameObject curISEffect;
     GameObject curMeleeEffect;
     [SerializeField] private int meleeProgress = 1;
     public int MeleeProgress
@@ -24,6 +25,7 @@ public class TheNew : CR
     enum SkillSet { DoubleSlash, PsychicAssault };
     [SerializeField] KeyCode meleeKey = KeyCode.A;
     [SerializeField] GameObject particle_prefab_ds;
+    [SerializeField] GameObject illusionSwordSlash;
     [SerializeField] GameObject[] meleeEffectPrefabs;
 
     protected override void Init()
@@ -54,82 +56,87 @@ public class TheNew : CR
 
         if (Input.GetKeyDown(meleeKey))
         {
-            if (canMove == false) return;
-
-            anim.ResetTrigger("WALK");
-            stateCR = State.Channeling;
-            canMove = false;
-            rb.velocity = new Vector2(0, rb.velocity.y);
-
-            anim.SetTrigger("MeleeTrigger");
-            meleeTimer = 0;
-
-            Collider2D[] colliders = null;
-            Vector2 curPos = transform.position;
-            switch (MeleeProgress)
-            {
-                case 1:
-                    {
-                        colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-0.28f * direction, -1), curPos + new Vector2(2.6f * direction, 1), LayerMask.GetMask("E-Units"));
-                        break;
-                    }
-                case 2:
-                    {
-                        colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0, -1), curPos + new Vector2(3.2f * direction, 1), LayerMask.GetMask("E-Units"));
-                        break;
-                    }
-                case 3:
-                    {
-                        StartCoroutine(Melee3Dash());
-                        break;
-                    }
-                case 4:
-                    {
-                        colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0.2f * direction, -1), curPos + new Vector2(2f * direction, 1.77f), LayerMask.GetMask("E-Units"));
-                        break;
-                    }
-            }
-
-            if (MeleeProgress != 3 && colliders != null)
-            {
-                foreach (var hit in colliders)
-                {
-                    if (hit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(MeleeProgress < 3 ? damageCR : damageCR * 1.7f);
-                    GenSkillEffect(2, hit.transform.position);
-                }
-                if (colliders.Length > 0)
-                {
-                    int t = UnityEngine.Random.Range(1, 5);
-                    string s;
-                    switch (t)
-                    {
-                        case 1:
-                            {
-                                s = "Punch1";
-                                break;
-                            }
-                        case 2:
-                            {
-                                s = "Punch2";
-                                break;
-                            }
-                        case 3:
-                            {
-                                s = "Kick1";
-                                break;
-                            }
-                        default:
-                            {
-                                s = "Kick2";
-                                break;
-                            }
-                    }
-                    CallSfx(s);
-                }
-            }
-
-            Debug.Log($"Melee {MeleeProgress}");
+            MeleeAttack();
         }
+    }
+    void MeleeAttack()
+    {
+        if (canMove == false) return;
+
+        anim.ResetTrigger("WALK");
+        stateCR = State.Channeling;
+        canMove = false;
+        rb.velocity = new Vector2(0, rb.velocity.y);
+
+        anim.SetTrigger("MeleeTrigger");
+        meleeTimer = 0;
+
+        Collider2D[] colliders = null;
+        Vector2 curPos = transform.position;
+        switch (MeleeProgress)
+        {
+            case 1:
+                {
+                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-0.28f * direction, -1), curPos + new Vector2(2.6f * direction, 1), LayerMask.GetMask("E-Units"));
+                    break;
+                }
+            case 2:
+                {
+                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0, -1), curPos + new Vector2(3.2f * direction, 1), LayerMask.GetMask("E-Units"));
+                    break;
+                }
+            case 3:
+                {
+                    StartCoroutine(Melee3Dash());
+                    break;
+                }
+            case 4:
+                {
+                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0.2f * direction, -1), curPos + new Vector2(2f * direction, 1.77f), LayerMask.GetMask("E-Units"));
+                    break;
+                }
+        }
+
+        if (MeleeProgress != 3 && colliders != null)
+        {
+            foreach (var hit in colliders)
+            {
+                if (hit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(MeleeProgress < 3 ? damageCR : damageCR * 1.7f);
+                GenSkillEffect(2, hit.transform.position);
+                UltimateAmount += 0.5f;
+            }
+            if (colliders.Length > 0)
+            {
+                int t = UnityEngine.Random.Range(1, 5);
+                string s;
+                switch (t)
+                {
+                    case 1:
+                        {
+                            s = "Punch1";
+                            break;
+                        }
+                    case 2:
+                        {
+                            s = "Punch2";
+                            break;
+                        }
+                    case 3:
+                        {
+                            s = "Kick1";
+                            break;
+                        }
+                    default:
+                        {
+                            s = "Kick2";
+                            break;
+                        }
+                }
+                CallSfx(s);
+            }
+        }
+
+        Debug.Log($"Melee {MeleeProgress}");
     }
     public IEnumerator Melee3Dash()
     {
@@ -137,8 +144,15 @@ public class TheNew : CR
         float dashDistance = 5f;
         var startPosition = transform.position;
         var destination = transform.position + new Vector3(direction * dashDistance, 0);
+
         float t = 0;
         float duration = 0.3f;
+        float attackCycle = 0.15f;
+
+        float d = attackCycle;
+
+        Dictionary<Transform, Vector3> hittenUnits = new();
+
         while (t < duration)
         {
             float f = Mathf.Clamp01(t / duration);
@@ -149,8 +163,34 @@ public class TheNew : CR
             Debug.DrawRay(transform.position, Vector2.right * outCircEase * dashDistance, Color.blue);
 
             if (platformsOnForward.collider == null) transform.position = Vector3.Lerp(startPosition, destination, outCircEase);
+            if (hittenUnits != null)
+            {
+                foreach (var h in hittenUnits)
+                {
+                    if (h.Key == null) { hittenUnits.Remove(h.Key); continue; }
+                    h.Key.position = transform.position + h.Value;
+                }
+            }
 
             t += Time.deltaTime;
+            d += Time.deltaTime;
+
+            if (d >= attackCycle)
+            {
+                d -= attackCycle;
+                var colliders = Physics2D.OverlapAreaAll((Vector2)transform.position + new Vector2(-1.6f * direction, -1), (Vector2)transform.position + new Vector2(1.15f * direction, 1), LayerMask.GetMask("E-Units"));
+                if (colliders != null)
+                {
+                    foreach (var c in colliders)
+                    {
+                        Vector3 gap = new Vector3(Mathf.Clamp(transform.position.x - c.transform.position.x, -0.8f, 1f), c.transform.position.y);
+                        if (c.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(damageCR * 0.5f);
+                        if (!hittenUnits.ContainsKey(c.transform)) hittenUnits.Add(c.transform, gap);
+                     UltimateAmount += 0.25f;
+                    }
+                    if (colliders.Length > 0) CallSfx("Punch1");
+                }
+            }
             yield return null;
         }
 
@@ -166,6 +206,11 @@ public class TheNew : CR
         curMeleeEffect = Instantiate(meleeEffectPrefabs[MeleeProgress - 1], transform);
     }
 
+    public void IllusionSwordEffGen()
+    {
+        curISEffect = Instantiate(illusionSwordSlash, transform);
+    }
+
     public void UpdateMeleeProgress()
     {
         MeleeProgress = MeleeProgress % 4 + 1;
@@ -175,7 +220,7 @@ public class TheNew : CR
     {
         float DSDamage = GetSkill(1).BaseDamage * damageCR;
         Vector2 curPos = transform.position;
-        Collider2D[] colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(1.3f * direction, -1), curPos + new Vector2(-0.7f * direction, 1), LayerMask.GetMask("E-Units"));
+        Collider2D[] colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(2.5f * direction, -1), curPos + new Vector2(-1.8f * direction, 1), LayerMask.GetMask("E-Units"));
         Vector2 DS_CenterPos = new Vector2();
 
         foreach (Collider2D E_UnitsHit in colliders)

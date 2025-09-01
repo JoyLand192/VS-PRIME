@@ -217,6 +217,10 @@ public class GameManager : MonoBehaviour
         {
             debugButtonManager.SummonOrangeMushroom();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            debugButtonManager.SummonSpikyMushroom();
+        }
     }
 
     public void Pause()

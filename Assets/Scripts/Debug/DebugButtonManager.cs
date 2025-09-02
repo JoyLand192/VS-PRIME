@@ -6,7 +6,7 @@ public class DebugButtonManager : MonoBehaviour
 {
     [SerializeField] CR cr;
     [SerializeField] UnitManager unitManager;
-    [SerializeField] DefCAMERA CAM;
+    [SerializeField] DefaultCamera CAM;
     float X, Y;
     int test = 1;
     void Awake()

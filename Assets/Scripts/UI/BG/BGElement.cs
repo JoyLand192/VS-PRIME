@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BGElement : MonoBehaviour
 {
-    public float XparallaxFactor, YparallaxFactor; // 0 = 0%, 1 = 100%
+    [Range(0, 1f)] public float xParallaxFactor;
+    [Range(0, 1f)] public float yParallaxFactor; // 0 = 0%, 1 = 100%
+    public float xOffset, yOffset;
     Camera cam;
     Vector2 CV, Origin;
 
@@ -17,6 +19,6 @@ public class BGElement : MonoBehaviour
     void LateUpdate()
     {
         CV = cam.transform.position;
-        transform.position = Origin + new Vector2(CV.x * XparallaxFactor, CV.y * YparallaxFactor);
+        transform.position = Origin + new Vector2(CV.x * xParallaxFactor + xOffset, CV.y * yParallaxFactor + yOffset);
     }
 }

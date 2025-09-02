@@ -158,9 +158,9 @@ public class TheNew : CR
             float f = Mathf.Clamp01(t / duration);
             float outCircEase = Mathf.Sqrt(1f - Mathf.Pow(f - 1f, 2f));
 
-            RaycastHit2D platformsOnForward = Physics2D.Raycast(transform.position + new Vector3(outCircEase * dashDistance + 0.3f, -0.8f), Vector2.up, 1.6f, LayerMask.GetMask("Platforms"));
-            Debug.DrawRay(transform.position + new Vector3(outCircEase * dashDistance + 0.3f, -0.8f), Vector2.up * 1.6f, Color.cyan);
-            Debug.DrawRay(transform.position, Vector2.right * outCircEase * dashDistance, Color.blue);
+            RaycastHit2D platformsOnForward = Physics2D.Raycast(transform.position + new Vector3(direction * dashDistance / 5 + 0.3f, -0.8f), Vector2.up, 1.6f, LayerMask.GetMask("Platforms"));
+            Debug.DrawRay(transform.position + new Vector3(direction * dashDistance / 5 + 0.3f, -0.8f), Vector2.up * 1.6f, Color.cyan);
+            Debug.DrawRay(transform.position, Vector2.right * direction * dashDistance / 5, Color.cyan);
 
             if (platformsOnForward.collider == null) transform.position = Vector3.Lerp(startPosition, destination, outCircEase);
             if (hittenUnits != null)
@@ -186,7 +186,7 @@ public class TheNew : CR
                         Vector3 gap = new Vector3(Mathf.Clamp(transform.position.x - c.transform.position.x, -0.8f, 1f), c.transform.position.y);
                         if (c.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(damageCR * 0.5f);
                         if (!hittenUnits.ContainsKey(c.transform)) hittenUnits.Add(c.transform, gap);
-                     UltimateAmount += 0.25f;
+                        UltimateAmount += 0.25f;
                     }
                     if (colliders.Length > 0) CallSfx("Punch1");
                 }
@@ -220,11 +220,12 @@ public class TheNew : CR
     {
         float DSDamage = GetSkill(1).BaseDamage * damageCR;
         Vector2 curPos = transform.position;
-        Collider2D[] colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(2.5f * direction, -1), curPos + new Vector2(-1.8f * direction, 1), LayerMask.GetMask("E-Units"));
+        Collider2D[] colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(2.8f * direction, -1), curPos + new Vector2(-2f * direction, 1), LayerMask.GetMask("E-Units"));
         Vector2 DS_CenterPos = new Vector2();
 
         foreach (Collider2D E_UnitsHit in colliders)
         {
+            if (E_UnitsHit.transform == null) continue;
             DS_CenterPos += (Vector2)E_UnitsHit.transform.position;
             if (E_UnitsHit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(DSDamage);
             GenSkillEffect((int)SkillSet.DoubleSlash, E_UnitsHit.transform.localPosition);
@@ -274,11 +275,14 @@ public class TheNew : CR
         float tmp = anim.speed;
         float patime = 0f;
         float tmp2 = direction;
+
         anim.speed = 0f;
         box.enabled = false;
         render.enabled = false;
         rb.isKinematic = true;
+
         CallSfx("Taat", 40f);
+        Destroy(curISEffect);
 
         while (patime < 0.16f)
         {

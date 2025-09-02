@@ -6,7 +6,7 @@ public class DebugButtonManager : MonoBehaviour
 {
     [SerializeField] CR cr;
     [SerializeField] UnitManager unitManager;
-    [SerializeField] DefCAMERA CAM;
+    [SerializeField] DefaultCamera CAM;
     float X, Y;
     int test = 1;
     void Awake()
@@ -38,6 +38,12 @@ public class DebugButtonManager : MonoBehaviour
     {
         test++;
         Object Mushroom = Instantiate(unitManager.LoadMob(1), new Vector3(0, 3, 0), Quaternion.identity);
+        Mushroom.name = $"Orange Mushroom {test}";
+    }
+    public void SummonSpikyMushroom()
+    {
+        test++;
+        Object Mushroom = Instantiate(unitManager.LoadMob(2), new Vector3(0, 3, 0), Quaternion.identity);
         Mushroom.name = $"Orange Mushroom {test}";
     }
     public void HalfUlti()

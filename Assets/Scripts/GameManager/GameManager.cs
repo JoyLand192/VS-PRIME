@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         set
         {
             if (CurrentStage != null) CurrentStage.CameraPosMin = value;
-            DefCAMERA.Instance.UpdateCameraCap();
+            DefaultCamera.Instance.UpdateCameraCap();
         }
     }
     public Vector2 CamMax
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         set
         {
             if (CurrentStage != null) CurrentStage.CameraPosMax = value;
-            DefCAMERA.Instance.UpdateCameraCap();
+            DefaultCamera.Instance.UpdateCameraCap();
         }
     }
     public static GameManager Instance
@@ -216,6 +216,10 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             debugButtonManager.SummonOrangeMushroom();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            debugButtonManager.SummonSpikyMushroom();
         }
     }
 

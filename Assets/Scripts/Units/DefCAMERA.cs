@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefCAMERA : MonoBehaviour
+public class DefaultCamera : MonoBehaviour
 {
-    private static DefCAMERA instance; 
-    public static DefCAMERA Instance
+    private static DefaultCamera instance; 
+    public static DefaultCamera Instance
     {
         get
         {

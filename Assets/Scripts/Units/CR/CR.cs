@@ -21,7 +21,7 @@ public class CR : MonoBehaviour
     protected enum State { Idle, Moving, Channeling, Busy };
     protected Dictionary<KeyCode, Skill> skillEquippedList = new Dictionary<KeyCode, Skill>();
     protected List<KeyCode> skillKeys = new();
-    protected Vector3 currentVelocity;
+    protected bool dashing = false;
     protected Image ultimateCharge
     {
         get
@@ -135,7 +135,7 @@ public class CR : MonoBehaviour
             {
                 if (skillEquippedList.TryGetValue(key, out Skill value) && value != null)
                 {
-                    if (!canMove && !value.Cancelable || cooldownSet.Contains(value)) { Debug.Log($"{{ {value.SkillName} 스킬을 아직 사용할 수 없습니다. }}"); return; }
+                    if (dashing || !canMove && !value.Cancelable || cooldownSet.Contains(value)) { Debug.Log($"{{ {value.SkillName} 스킬을 아직 사용할 수 없습니다. }}"); return; }
                     ChannelSkillCast(value);
                     canMove = false;
                 }
@@ -160,6 +160,7 @@ public class CR : MonoBehaviour
 
     protected void GetDirection()
     {
+        if (!canMove) return;
         if (Input.GetKey(KeyCode.RightArrow)) direction = 1;
         else if (Input.GetKey(KeyCode.LeftArrow)) direction = -1;
     }
@@ -182,8 +183,6 @@ public class CR : MonoBehaviour
                 canMove = false;
                 break;
         }
-
-        currentVelocity = rb.velocity;
         hitGround = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y * 1.15f, LayerMask.GetMask("Platforms"));
         Debug.DrawRay(transform.position, Vector2.down * transform.localScale.y * 1.15f, Color.red);
 
@@ -191,10 +190,9 @@ public class CR : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !onAir) jumping = true;
 
 
-        if (currentVelocity.y < maxGravity * -1)
+        if (rb.velocity.y < -maxGravity)
         {
-            currentVelocity.y = maxGravity * -1;
-            rb.velocity = currentVelocity;
+            rb.velocity = new Vector3(rb.velocity.x, -maxGravity);
         }
 
         Moving();

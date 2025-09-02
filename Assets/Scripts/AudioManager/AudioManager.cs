@@ -25,6 +25,12 @@ public class AudioManager : MonoBehaviour
         Select,
         Charge,
         PowerCharge,
+        Punch1,
+        Punch2,
+        Punch3,
+        Kick1,
+        Kick2,
+        Kick3,
     }
     void Awake()
     {

@@ -31,6 +31,7 @@ public class AudioManager : MonoBehaviour
         Kick1,
         Kick2,
         Kick3,
+        Shoot,
     }
     void Awake()
     {

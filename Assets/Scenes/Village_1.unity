@@ -1605,7 +1605,7 @@ MonoBehaviour:
   xParallaxFactor: 0.8
   yParallaxFactor: 0.8
   xOffset: 0
-  yOffset: -1.6
+  yOffset: -0.8
 --- !u!212 &443207675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1761,7 +1761,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.9, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1869525078}
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   xParallaxFactor: 0.94
   yParallaxFactor: 0.94
   xOffset: 0
-  yOffset: 0.99
+  yOffset: 1.21
 --- !u!212 &521369016
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   xParallaxFactor: 0.67
   yParallaxFactor: 0.67
   xOffset: 0
-  yOffset: -1.2
+  yOffset: -0.8
 --- !u!212 &699295487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4097,7 +4097,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.58, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.28, y: 0.28, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1869525078}
@@ -4117,7 +4117,7 @@ MonoBehaviour:
   xParallaxFactor: 0.96
   yParallaxFactor: 0.96
   xOffset: 0
-  yOffset: 1.2
+  yOffset: 1.33
 --- !u!212 &995314982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5090,7 +5090,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 131.4, y: 19.5}
+  m_Size: {x: 197.63, y: 19.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5106,7 +5106,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1869525078}
@@ -5126,7 +5126,7 @@ MonoBehaviour:
   xParallaxFactor: 0.91
   yParallaxFactor: 0.91
   xOffset: 0
-  yOffset: -2.4
+  yOffset: 1.08
 --- !u!1 &1387168882
 GameObject:
   m_ObjectHideFlags: 0

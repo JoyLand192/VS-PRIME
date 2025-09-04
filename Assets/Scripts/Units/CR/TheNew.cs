@@ -77,12 +77,12 @@ public class TheNew : CR
         {
             case 1:
                 {
-                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-0.28f * direction, -1), curPos + new Vector2(2.6f * direction, 1), LayerMask.GetMask("E-Units"));
+                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-0.58f * direction, -1), curPos + new Vector2(2.6f * direction, 1), LayerMask.GetMask("E-Units"));
                     break;
                 }
             case 2:
                 {
-                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0, -1), curPos + new Vector2(3.2f * direction, 1), LayerMask.GetMask("E-Units"));
+                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-0.5f, -1), curPos + new Vector2(3.2f * direction, 1), LayerMask.GetMask("E-Units"));
                     break;
                 }
             case 3:
@@ -92,7 +92,7 @@ public class TheNew : CR
                 }
             case 4:
                 {
-                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(0.2f * direction, -1), curPos + new Vector2(2f * direction, 1.77f), LayerMask.GetMask("E-Units"));
+                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-0.4f * direction, -1), curPos + new Vector2(2f * direction, 1.77f), LayerMask.GetMask("E-Units"));
                     break;
                 }
         }

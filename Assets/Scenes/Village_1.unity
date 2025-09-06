@@ -1585,7 +1585,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -6.2, z: 0}
-  m_LocalScale: {x: 0.43, y: 0.43, z: 1}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1869525078}
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   xParallaxFactor: 0.8
   yParallaxFactor: 0.8
   xOffset: 0
-  yOffset: -0.8
+  yOffset: 5.66
 --- !u!212 &443207675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1652,7 +1652,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 440.3, y: 61.6}
+  m_Size: {x: 573.2, y: 61.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2281,7 +2281,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -9.71, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1869525078}
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   xParallaxFactor: 0.67
   yParallaxFactor: 0.67
   xOffset: 0
-  yOffset: -0.8
+  yOffset: 7.2
 --- !u!212 &699295487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2348,7 +2348,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 210.9, y: 61.6}
+  m_Size: {x: 773.48, y: 61.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

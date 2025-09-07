@@ -12,7 +12,7 @@ public class Portal : MonoBehaviour
     float tweenDistance = 2560f;
     bool crTriggered = false;
     bool entering = false;
-    public StageData stageData;
+    public Stage stageData;
     public GameObject localSwipePrefab;
     void Awake()
     {
@@ -41,11 +41,11 @@ public class Portal : MonoBehaviour
     {
         if (stageData == null) { Debug.Log($"({gameObject.name}) StageData is null"); return; }
         entering = true;
-        StartCoroutine(stageData.SwipeWhenTeleport ? SwipeLoad() : FadeLoad());
+        StartCoroutine(stageData.data.SwipeWhenTeleport ? SwipeLoad() : FadeLoad());
     }
     IEnumerator SwipeLoad()
     {
-        int swipeDestination = (int)stageData.swipeDestination;
+        int swipeDestination = (int)stageData.data.swipeDestination;
         RectTransform parentCanvas = new GameObject("swiperCanvas", typeof(RectTransform)).GetComponent<RectTransform>();
         DontDestroyOnLoad(parentCanvas.gameObject);
 
@@ -77,7 +77,7 @@ public class Portal : MonoBehaviour
         if (GameManager.Instance == null)
         {
             Destroy(parentCanvas.gameObject);
-            SceneManager.LoadScene(stageData.SceneName);
+            SceneManager.LoadScene(stageData.data.SceneName);
             yield break;
         }
         GameManager.Instance.CurrentStage = stageData;

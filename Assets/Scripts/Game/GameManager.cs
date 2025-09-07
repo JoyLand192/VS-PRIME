@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
     public Image ultVig;
     public Color crColor;
     public bool isSetting { get; private set; } = false;
-    [SerializeField] StageData m_currentStage;
-    public StageData CurrentStage
+    [SerializeField] Stage m_currentStage;
+    public Stage CurrentStage
     {
         get => m_currentStage;
         set
@@ -52,11 +52,11 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return CurrentStage?.CameraPosMin ?? new Vector2(-5000, -5000);
+            return CurrentStage.data?.CameraPosMin ?? new Vector2(-5000, -5000);
         }
         set
         {
-            if (CurrentStage != null) CurrentStage.CameraPosMin = value;
+            if (CurrentStage.data != null) CurrentStage.data.CameraPosMin = value;
             DefaultCamera.Instance.UpdateCameraCap();
         }
     }
@@ -64,11 +64,11 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return CurrentStage?.CameraPosMax ?? new Vector2(5000, 5000);
+            return CurrentStage.data?.CameraPosMax ?? new Vector2(5000, 5000);
         }
         set
         {
-            if (CurrentStage != null) CurrentStage.CameraPosMax = value;
+            if (CurrentStage.data != null) CurrentStage.data.CameraPosMax = value;
             DefaultCamera.Instance.UpdateCameraCap();
         }
     }
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
             MusicVolumeChanged();
             audioManager.SFXVolumeChanged();
         });
-        if (CurrentStage == null) Debug.Log("GameManager => StageData Not Assigned");
+        if (CurrentStage.data == null) Debug.Log("GameManager => StageData Not Assigned");
     }
     public void EquipSkill(Skill skill)
     {
@@ -134,9 +134,9 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator LoadStage(RectTransform swiper, GameObject parent, bool horizontal, int side, float distance)
     {
-        if (CurrentStage == null) { Debug.Log("SceneData is Null!!"); yield break; }
+        if (CurrentStage.data == null) { Debug.Log("SceneData is Null!!"); yield break; }
 
-        AsyncOperation loader = SceneManager.LoadSceneAsync(CurrentStage.SceneName);
+        AsyncOperation loader = SceneManager.LoadSceneAsync(CurrentStage.data.SceneName);
         loader.allowSceneActivation = true;
         yield return loader;
         yield return new WaitForEndOfFrame();
@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
         cr = GameObject.Find("CR").GetComponent<CR>();
         cr.SceneInit();
 
-        if (CurrentStage.ResetStats)
+        if (CurrentStage.data.ResetStats)
         {
             cr.UltimateAmount = 0;
         }

@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
     public Image ultVig;
     public Color crColor;
     public bool isSetting { get; private set; } = false;
-    [SerializeField] CurrentStageData m_currentStage;
-    public CurrentStageData CurrentStage
+    [SerializeField] StageData m_currentStage;
+    public StageData CurrentStage
     {
         get => m_currentStage;
         set
@@ -191,6 +191,10 @@ public class GameManager : MonoBehaviour
         {
             a.volume = musicVolumeSlider.value * GameStatus.MasterVolume;
         }
+    }
+    public void CastTriggerEvent()
+    {
+        Debug.Log("ok");
     }
 
     public void CallSfx(string sfx)

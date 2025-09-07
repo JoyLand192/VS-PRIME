@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewStageData", menuName = "StageChanger/StageData")]
-public class CurrentStageData : ScriptableObject
+[CreateAssetMenu(fileName = "NewStageData", menuName = "StageData/Create New")]
+public class StageData : ScriptableObject
 {
     public string SceneName;
     public bool ResetStats;

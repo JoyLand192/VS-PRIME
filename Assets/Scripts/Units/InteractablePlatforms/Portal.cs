@@ -12,7 +12,7 @@ public class Portal : MonoBehaviour
     float tweenDistance = 2560f;
     bool crTriggered = false;
     bool entering = false;
-    public CurrentStageData stageData;
+    public StageData stageData;
     public GameObject localSwipePrefab;
     void Awake()
     {

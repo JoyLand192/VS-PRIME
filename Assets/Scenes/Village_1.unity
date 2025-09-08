@@ -1039,6 +1039,52 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &228597445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228597447}
+  - component: {fileID: 228597448}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228597447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228597445}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.433226, y: -0.923422, z: -0.020137941}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &228597448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228597445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6dc08bec9c54a4285fd1b93582bb32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerBitMask: 0
+  data: {fileID: 11400000, guid: 0b5c134812e61d746839a0864cf3e1e6, type: 2}
 --- !u!1 &239554730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5536,7 +5582,7 @@ GameObject:
   - component: {fileID: 1502527351}
   - component: {fileID: 1502527350}
   m_Layer: 0
-  m_Name: EventTrigger1
+  m_Name: EventTrigger0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5625,7 +5671,7 @@ MonoBehaviour:
   RequiresPreviousEvent: 0
   SwitchBitMask: 0
   RequiredEventNumbers: 
-  EventNumber: 1
+  EventNumber: 0
 --- !u!61 &1502527351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10368,3 +10414,4 @@ SceneRoots:
   - {fileID: 1390595609}
   - {fileID: 239554734}
   - {fileID: 57131559}
+  - {fileID: 228597447}

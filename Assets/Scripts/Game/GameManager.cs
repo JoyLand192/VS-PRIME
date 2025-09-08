@@ -41,7 +41,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] Stage m_currentStage;
     public Stage CurrentStage
     {
-        get => m_currentStage;
+        get
+        {
+            if (m_currentStage == null) m_currentStage = GameObject.Find("StageManager").GetComponent<Stage>();
+            return m_currentStage;
+        }
         set
         {
             Debug.Log($"{name}: Changing CurrentStageData");
@@ -104,11 +108,13 @@ public class GameManager : MonoBehaviour
             Debug.Log($"{s.SkillName} ({s.SkillNumber}) has been Loaded.");
         }
 
-        musicVolumeSlider.onValueChanged.AddListener(delegate {
+        musicVolumeSlider.onValueChanged.AddListener(delegate
+        {
             MusicVolumeChanged();
         });
 
-        masterVolumeSlider.onValueChanged.AddListener(delegate {
+        masterVolumeSlider.onValueChanged.AddListener(delegate
+        {
             GameStatus.MasterVolume = masterVolumeSlider.value;
             MusicVolumeChanged();
             audioManager.SFXVolumeChanged();
@@ -154,7 +160,7 @@ public class GameManager : MonoBehaviour
         swiper.localRotation = Quaternion.Euler(Teuler.x, Teuler.y, Teuler.z - 180f);
 
         if (horizontal)
-        {   
+        {
             yield return swiper.DOAnchorPosX(distance * side, 0.7f).SetEase(Ease.OutCirc).WaitForCompletion();
         }
         else
@@ -192,9 +198,26 @@ public class GameManager : MonoBehaviour
             a.volume = musicVolumeSlider.value * GameStatus.MasterVolume;
         }
     }
-    public void CastTriggerEvent()
+    public void CastTriggerEvent(bool requiresPreviousEvent, int[] requiredNumbers, bool switchBitMask, int number)
     {
-        Debug.Log("ok");
+        if (requiresPreviousEvent)
+        {
+            foreach (int x in requiredNumbers)
+            {
+                if ((CurrentStage.triggerBitMask & (1 << x)) == 0) return;
+            }
+        }
+
+        if (CurrentStage.TriggerEvents.Count < number - 1 || CurrentStage.TriggerEvents[number] == null)
+        {
+            Debug.Log($"스테이지 데이터를 찾을 수 없었어요");
+            return;
+        }
+
+        CurrentStage.TriggerEvents[number].Invoke();
+
+        CurrentStage.triggerBitMask = switchBitMask == true ? CurrentStage.triggerBitMask | (1 << number) : CurrentStage.triggerBitMask ^ (1 << number);
+        // switchBitMask일 때 1이면 0, 0이면 1로 뒤집기 (AI 아니다)
     }
 
     public void CallSfx(string sfx)

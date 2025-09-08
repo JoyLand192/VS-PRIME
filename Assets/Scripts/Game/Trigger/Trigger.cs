@@ -14,7 +14,7 @@ public class Trigger : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.layer != LayerMask.NameToLayer("CR")) return;
-        GameManager.Instance.CastTriggerEvent();
+        GameManager.Instance.CastTriggerEvent(RequiresPreviousEvent, RequiredEventNumbers, SwitchBitMask, EventNumber);
         if (!CanRepeat) Destroy(gameObject);
     }
 }

@@ -127,6 +127,21 @@ public class CR : MonoBehaviour
         canMove = true;
         direction = transform.localScale.x >= 0 ? -1 : 1;
     }
+    public void SetMove(bool value)
+    {
+        if (!value)
+        {
+            canMove = false;
+            rb.velocity = new Vector3(0, rb.velocity.y);
+            anim.ResetTrigger("WALK");
+        }
+        else canMove = true;
+    }
+    public void SetAnimTrigger(string name, bool? value)
+    {
+        if (value != null) anim.SetBool(name, value.Value);
+        else anim.SetTrigger(name);
+    }
     protected void TestSkillKeys()
     {
         foreach (KeyCode key in skillKeys)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e6608538f532db44282339199dc757e2
+guid: 03d509dab8c031c44bf77d7dd092070d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -2217,174 +2217,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: the new-3t_101
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d763aa107051b3344af4a95238b93b8d
-      internalID: -466430727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: the new-3t_102
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 077b8e2fc99777045b5099d146c37690
-      internalID: 248620049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: the new-3t_103
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43c83530f6ef10e4aac283f7d1ac41c0
-      internalID: 1031753404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: the new-3t_104
-      rect:
-        serializedVersion: 2
-        x: 350
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 561f17cecf9d8724ab2d14ec6f353868
-      internalID: 1729885905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: the new-3t_105
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d04e920cba51c04ba0eb637863477dc
-      internalID: -976166232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: the new-3t_106
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad014d8fca92d7a4086c7fe1a8ae1356
-      internalID: -1375798428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: the new-3t_107
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 046679e37eb806f4eb1852cfabb71231
-      internalID: 520669115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: the new-3t_108
-      rect:
-        serializedVersion: 2
-        x: 630
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10e77b55ae7f76940b4a282500ecde5c
-      internalID: -748704241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2400,14 +2232,6 @@ TextureImporter:
       the new-3t_1: 526574076
       the new-3t_10: -368370631
       the new-3t_100: -204743028
-      the new-3t_101: -466430727
-      the new-3t_102: 248620049
-      the new-3t_103: 1031753404
-      the new-3t_104: 1729885905
-      the new-3t_105: -976166232
-      the new-3t_106: -1375798428
-      the new-3t_107: 520669115
-      the new-3t_108: -748704241
       the new-3t_11: 2842535
       the new-3t_12: 2054136638
       the new-3t_13: -2127959307

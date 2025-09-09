@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private Color paused = new Color(0, 0, 0, 215f / 255f);
     #region Components
-    CR cr;
+    public CR cr;
     [SerializeField] Slider masterVolumeSlider;
     [SerializeField] Slider musicVolumeSlider;
     [SerializeField] AudioSource[] musicSources;
@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] RectTransform settingsTitle;
     #endregion
     public static List<Skill> Skills { get; private set; } = new List<Skill>();
+    public CanvasGroup gameUI;
+    public CanvasGroup effectUI;
     public GameObject swipePrefab;
     public GameObject hud;
     public GameObject skillSlotsParent;
@@ -83,8 +85,6 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
-
-
     void Awake()
     {
         cr = GameObject.Find("CR").GetComponent<CR>();
@@ -96,6 +96,14 @@ public class GameManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(hud);
         DontDestroyOnLoad(gameObject);
+    }
+    public void setHudVisible(float value, float distance)
+    {
+        if (gameUI == null) { Debug.Log("gameUI is null"); return; }
+        if (effectUI == null) { Debug.Log("effectUI is null"); return; }
+        
+        gameUI.DOFade(value, distance);
+        effectUI.DOFade(value, distance);
     }
 
     void Start()
@@ -214,7 +222,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        CurrentStage.TriggerEvents[number].Invoke();
+        StartCoroutine(CurrentStage.TriggerEvents[number]   );
 
         CurrentStage.triggerBitMask = switchBitMask == true ? CurrentStage.triggerBitMask | (1 << number) : CurrentStage.triggerBitMask ^ (1 << number);
         // switchBitMask일 때 1이면 0, 0이면 1로 뒤집기 (AI 아니다)

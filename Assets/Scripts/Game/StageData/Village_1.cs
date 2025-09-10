@@ -20,16 +20,15 @@ public class Village_1 : Stage
 
         yield return Wait(1f);
 
-        Debug.Log("CR이 위를 바라보는 연출");
         ToggleCrTrigger("LookUp");
 
         yield return Wait(1.4f);
 
-        yield return MoveCamera(new Vector2(22, 14), 2f, "OutCirc");
+        yield return MoveCamera(new Vector2(22, 14), 2f, "InOutCubic");
 
-        yield return ScaleCamera(7, 0.9f, "OutCirc");
+        yield return ScaleCamera(8.4f, 0.6f, "OutCirc");
 
-        yield return Wait(3f);
+        yield return Wait(2f);
 
         ToggleCameraFollow(true);
 
@@ -45,6 +44,7 @@ public class Village_1 : Stage
         yield return Wait(0.5f);
 
         ToggleCrMove(true);
+        yield return ScaleCamera(10f, 0.8f, "OutCirc");
     }
     IEnumerator Event2()
     {

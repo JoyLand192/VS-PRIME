@@ -45,8 +45,6 @@ public class EUnits : MonoBehaviour
     }
     protected virtual void Init()
     {
-        Debug.Log($"{gameObject.name} Loading . . .");
-
         effectManager = GameObject.Find("EffectManager").GetComponent<EffectManager>();
         damageTextCanvas = GameObject.FindWithTag("DamageTextUI");
 
@@ -55,17 +53,12 @@ public class EUnits : MonoBehaviour
         healthBar.name = $"HealthBar_{gameObject.name}";
         healthBarAmount = healthBar.transform.GetChild(0).GetComponent<Image>();
 
-        Debug.Log($"{gameObject.name} Loading . . .1");
-
         HP = maxHP;
         alive = true;
         canAct = true;
 
-
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>(); 
-        
-        Debug.Log($"{gameObject.name} Loading . . .2");
 
         Acts.Add(Move);
         Acts.Add(Move);
@@ -75,7 +68,6 @@ public class EUnits : MonoBehaviour
         StartCoroutine(RandomActRepeat());
 
         move_dir = -1;
-        Debug.Log($"{gameObject.name} Load Completed");
     }
     protected void UpdateHP(float v)
     {
@@ -170,7 +162,6 @@ public class EUnits : MonoBehaviour
     public void GetDamaged(float Damage)
     {
         HP -= Damage;
-        Debug.Log($"{transform.gameObject.name}: AAAAAAAAAAAAAAAA ({Damage} Damage, Current HP : {HP})");
 
         GameObject text = Instantiate(effectManager.LoadDamageText(1), damageTextCanvas.transform);
         text.GetComponent<UnitsInteractableUI>().followTarget = transform;

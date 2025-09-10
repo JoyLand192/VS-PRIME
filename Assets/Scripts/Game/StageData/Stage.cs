@@ -14,7 +14,7 @@ public class Stage : MonoBehaviour
     public void ToggleCameraFollow(bool value) => DefaultCamera.Instance.followingTarget = value;
     public IEnumerator ScaleCamera(float value, float duration, string ease = "Linear")
     {
-        yield return DefaultCamera.Instance.Scale(value, duration, Enum.TryParse<DG.Tweening.Ease>(ease, true, out var result) ? result : DG.Tweening.Ease.Linear);
+        yield return StartCoroutine(DefaultCamera.Instance.Scale(value, duration, Enum.TryParse<DG.Tweening.Ease>(ease, true, out var result) ? result : DG.Tweening.Ease.Linear));
     }
     public IEnumerator ShakeCamera(float xStr, float yStr, float duration, bool softness = true)
     {

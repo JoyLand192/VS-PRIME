@@ -167,8 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0.8
-  YparallaxFactor: 0.95
+  xParallaxFactor: 0.891
+  yParallaxFactor: 0.885
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &28894434
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -266,8 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0
-  YparallaxFactor: 0.934
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &99151660
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -752,8 +756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0
-  YparallaxFactor: 0.937
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &224306857
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -806,6 +812,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &252814571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252814573}
+  - component: {fileID: 252814572}
+  m_Layer: 0
+  m_Name: StageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &252814572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252814571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6dc08bec9c54a4285fd1b93582bb32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerBitMask: 0
+  data: {fileID: 11400000, guid: 0b5c134812e61d746839a0864cf3e1e6, type: 2}
+--- !u!4 &252814573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252814571}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.433226, y: -0.923422, z: -0.020137941}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265129724
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,8 +903,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0
-  YparallaxFactor: 0.934
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &265129727
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1250,8 +1304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0.84
-  YparallaxFactor: 0.95
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &422902176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2016,12 +2072,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  xOffset: 0
-  yOffset: 0
   cameraMin: {x: 0, y: 0}
   cameraMax: {x: 0, y: 0}
-  isStopped: 0
-  setToPosition: 0
+  followingTarget: 1
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,8 +2825,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 1
-  YparallaxFactor: 0.97
+  xParallaxFactor: 1
+  yParallaxFactor: 1
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &703076726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23394,8 +23449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 1
-  YparallaxFactor: 0.97
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!1 &1135096203
 GameObject:
   m_ObjectHideFlags: 0
@@ -23664,8 +23721,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0
-  YparallaxFactor: 0.94
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!1 &1154626190
 GameObject:
   m_ObjectHideFlags: 0
@@ -23763,8 +23822,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0.88
-  YparallaxFactor: 0.98
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!1 &1155528233
 GameObject:
   m_ObjectHideFlags: 0
@@ -24185,7 +24246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a3036da61793943a94c47dd2a001e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: d6ebb4e12faba094eafa287b6c97561f, type: 2}
+  stageData: {fileID: 0}
   localSwipePrefab: {fileID: 0}
 --- !u!1 &1230615256
 GameObject:
@@ -24454,8 +24515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0
-  YparallaxFactor: 0.94
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &1291029509
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25145,8 +25208,8 @@ BoxCollider2D:
   m_Offset: {x: 0.4276334, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 2}
+    pivot: {x: 0.5, y: 0.25}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 4, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -25170,6 +25233,7 @@ MonoBehaviour:
   speedCR: 0
   currentDirection: 0
   jumpPower: 0
+  abilityHaste: 0
   maxGravity: 0
   jumping: 0
   onAir: 0
@@ -25178,7 +25242,15 @@ MonoBehaviour:
   damageBase: 10
   damageCR: 0
   direction: 0
+  meleeProgress: 1
+  meleeTimer: 0
+  meleeTimeLimit: 0
+  meleeKey: 97
+  ultKey: 113
   particle_prefab_ds: {fileID: 3613669102188821411, guid: 3e74c0fbb984d4c4f9ab48c012baed87, type: 3}
+  illusionSwordSlash: {fileID: 0}
+  meleeEffectPrefabs: []
+  ultimateLaser: {fileID: 0}
 --- !u!114 &1482017311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25382,8 +25454,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0
-  YparallaxFactor: 0.937
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &1551831899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25727,6 +25801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3edef11d29a82843a9922ec87415138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cr: {fileID: 0}
   masterVolumeSlider: {fileID: 953802121}
   musicVolumeSlider: {fileID: 502085021}
   musicSources:
@@ -25738,12 +25813,18 @@ MonoBehaviour:
   settingsMenu: {fileID: 909517682}
   audioSettings: {fileID: 1669280606}
   settingsTitle: {fileID: 200593674}
+  gameUI: {fileID: 0}
+  effectUI: {fileID: 0}
   swipePrefab: {fileID: 7509413184505809721, guid: 8cb6ce19ae955a447bca78724c8143db, type: 3}
   hud: {fileID: 179265824}
+  skillSlotsParent: {fileID: 0}
+  skillSlot: {fileID: 0}
+  skillReadyFlash: {fileID: 0}
   canvas50: {fileID: 1961181933}
   ultMeter: {fileID: 188808540}
   ultVig: {fileID: 1456639048}
-  m_currentStage: {fileID: 11400000, guid: 8714c36ef2eda534e84bd44ed74b6ce7, type: 2}
+  crColor: {r: 0, g: 0, b: 0, a: 0}
+  m_currentStage: {fileID: 0}
 --- !u!82 &1627356918
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26057,8 +26138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0.7
-  YparallaxFactor: 0.92
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &1658924052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26916,8 +26999,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0.8
-  YparallaxFactor: 0.92
+  xParallaxFactor: 0
+  yParallaxFactor: 0
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &1985310777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27225,8 +27310,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e96618ccf5f4794945319af50d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XparallaxFactor: 0.9
-  YparallaxFactor: 0.98
+  xParallaxFactor: 0.934
+  yParallaxFactor: 0.929
+  xOffset: 0
+  yOffset: 0
 --- !u!212 &2041256411
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27545,3 +27632,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1489996958}
   - {fileID: 2071875259}
+  - {fileID: 252814573}

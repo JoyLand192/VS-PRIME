@@ -11,28 +11,28 @@ public class DebugButtonManager : MonoBehaviour
     int test = 1;
     void Awake()
     {
-        X = CAM.xOffset;
-        Y = CAM.yOffset;
+        X = CAM.XOffset;
+        Y = CAM.YOffset;
     }
     public void XInc()
     {
         X++;
-        CAM.SetXOffset(X);
+        CAM.SetOffset(x: X);
     }
     public void YInc()
     {
         Y++;
-        CAM.SetYOffset(Y);
+        CAM.SetOffset(y: Y);
     }
     public void XDec()
     {
         X--;
-        CAM.SetXOffset(X);
+        CAM.SetOffset(x: X);
     }
     public void YDec()
     {
         Y--;
-        CAM.SetYOffset(Y);
+        CAM.SetOffset(y: Y);
     }
     public void SummonOrangeMushroom()
     {

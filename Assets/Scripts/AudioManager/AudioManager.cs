@@ -32,6 +32,10 @@ public class AudioManager : MonoBehaviour
         Kick2,
         Kick3,
         Shoot,
+        Dodge1,
+        Dodge2,
+        LaserBeam,
+        UltimateCharge,
     }
     void Awake()
     {

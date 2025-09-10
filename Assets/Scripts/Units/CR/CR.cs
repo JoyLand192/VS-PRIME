@@ -246,7 +246,7 @@ public class CR : MonoBehaviour
         if (!ultCharged)
         {
             ultCharged = true;
-            CallSfx("PowerCharge");
+            CallSfx("UltimateCharge");
             ultimateVig.DOColor(new Color(1, 1, 1, 160f / 255f), 1f);
         }
     }

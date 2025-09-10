@@ -10,6 +10,7 @@ public class TheNew : CR
 {
     GameObject curISEffect;
     GameObject curMeleeEffect;
+    GameObject curUltEffect;
     [SerializeField] private int meleeProgress = 1;
     public int MeleeProgress
     {
@@ -24,9 +25,11 @@ public class TheNew : CR
     public float meleeTimeLimit;
     enum SkillSet { DoubleSlash, PsychicAssault };
     [SerializeField] KeyCode meleeKey = KeyCode.A;
+    [SerializeField] KeyCode ultKey = KeyCode.Q;
     [SerializeField] GameObject particle_prefab_ds;
     [SerializeField] GameObject illusionSwordSlash;
     [SerializeField] GameObject[] meleeEffectPrefabs;
+    [SerializeField] GameObject ultimateLaser;
 
     protected override void Init()
     {
@@ -58,6 +61,24 @@ public class TheNew : CR
         {
             MeleeAttack();
         }
+
+        if (Input.GetKeyDown(ultKey))
+        {
+            UltimateSkillCast();
+        }
+    }
+    void UltimateSkillCast()
+    {
+        if (!ultCharged) return;
+
+        UltimateAmount = 0f;
+        ultCharged = false;
+        ultimateVig.color = new Color(1, 1, 1, 0);
+        anim.SetTrigger("ULTIMATE");
+    }
+    public void UltimateEffGen()
+    {
+        curUltEffect = Instantiate(ultimateLaser, transform);
     }
     void MeleeAttack()
     {
@@ -191,6 +212,7 @@ public class TheNew : CR
                     if (colliders.Length > 0) CallSfx("Punch1");
                 }
             }
+
             yield return null;
         }
 

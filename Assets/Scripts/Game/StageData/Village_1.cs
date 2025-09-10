@@ -27,6 +27,8 @@ public class Village_1 : Stage
 
         yield return MoveCamera(new Vector2(22, 14), 2f, "OutCirc");
 
+        yield return ScaleCamera(7, 0.9f, "OutCirc");
+
         yield return Wait(3f);
 
         ToggleCameraFollow(true);

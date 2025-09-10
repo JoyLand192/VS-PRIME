@@ -97,13 +97,13 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(hud);
         DontDestroyOnLoad(gameObject);
     }
-    public void setHudVisible(float value, float distance)
+    public void setHudVisible(float value, float duration)
     {
         if (gameUI == null) { Debug.Log("gameUI is null"); return; }
         if (effectUI == null) { Debug.Log("effectUI is null"); return; }
         
-        gameUI.DOFade(value, distance);
-        effectUI.DOFade(value, distance);
+        gameUI.DOFade(value, duration);
+        effectUI.DOFade(value, duration);
     }
 
     void Start()

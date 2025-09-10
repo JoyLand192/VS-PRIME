@@ -23,7 +23,7 @@ public class TheNew : CR
     }
     public float meleeTimer = 0;
     public float meleeTimeLimit;
-    enum SkillSet { DoubleSlash, PsychicAssault };
+    enum SkillSet { DoubleSlash, PsychicAssault, Ultimate };
     [SerializeField] KeyCode meleeKey = KeyCode.A;
     [SerializeField] KeyCode ultKey = KeyCode.Q;
     [SerializeField] GameObject particle_prefab_ds;
@@ -69,16 +69,113 @@ public class TheNew : CR
     }
     void UltimateSkillCast()
     {
-        if (!ultCharged) return;
+        if (canMove == false || !ultCharged) return;
+
+        anim.ResetTrigger("WALK");
+        stateCR = State.Channeling;
+        canMove = false;
+        rb.velocity = new Vector2(0, rb.velocity.y);
 
         UltimateAmount = 0f;
         ultCharged = false;
-        ultimateVig.color = new Color(1, 1, 1, 0);
+        ultimateVig.gameObject.SetActive(false);
         anim.SetTrigger("ULTIMATE");
+        Destroy(ultChargeEff);
     }
     public void UltimateEffGen()
     {
         curUltEffect = Instantiate(ultimateLaser, transform);
+    }
+    public void UltHitTest(int t)
+    {
+        Vector2 curPos = transform.position;
+        Collider2D[] colliders = null;
+        switch (t)
+        {
+            case 1:
+                {
+                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-2f * direction, -1), curPos + new Vector2(1.6f * direction, 1), LayerMask.GetMask("E-Units"));
+                    break;
+                }
+            case 2:
+                {
+                    colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(-0.5f * direction, -1), curPos + new Vector2(30f * direction, 1), LayerMask.GetMask("E-Units"));
+                    break;
+                }
+        }
+
+        if (colliders != null)
+        {
+            foreach (var hit in colliders)
+            {
+                if (hit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(damageCR * GetSkill(3).BaseDamage * (-2 * t + 5));
+                //GenSkillEffect(t + 2, hit.transform.position);
+
+                var pps = Instantiate(particle_prefab_ds, hit.transform.localPosition, Quaternion.identity);
+                if (pps.TryGetComponent<ParticleSystem>(out var p)) p.Play();
+                Destroy(pps.gameObject, 2f);
+            }
+        }
+
+        if (colliders.Length > 0)
+        {
+            CallSfx("Damage");
+        }
+    }
+    public void DoubleSlash_HitTest()
+    {
+        float DSDamage = GetSkill(1).BaseDamage * damageCR;
+        Vector2 curPos = transform.position;
+        Collider2D[] colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(2.8f * direction, -1), curPos + new Vector2(-2f * direction, 1), LayerMask.GetMask("E-Units"));
+        Vector2 DS_CenterPos = new Vector2();
+
+        foreach (Collider2D E_UnitsHit in colliders)
+        {
+            if (E_UnitsHit.transform == null) continue;
+            DS_CenterPos += (Vector2)E_UnitsHit.transform.position;
+            if (E_UnitsHit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(DSDamage);
+            GenSkillEffect((int)SkillSet.DoubleSlash, E_UnitsHit.transform.localPosition);
+
+            UltimateAmount += 3.5f;
+            var pps = Instantiate(particle_prefab_ds, E_UnitsHit.transform.localPosition, Quaternion.identity);
+            if (pps.TryGetComponent<ParticleSystem>(out var p)) p.Play();
+            Destroy(pps.gameObject, 2f);
+        }
+
+        if (colliders.Length > 0)
+        {
+            DS_CenterPos /= colliders.Length;
+            CallSfx("Damage");
+        }
+    }
+    public void UltCamera(int t)
+    {
+        switch (t)
+        {
+            case 1:
+                {
+                    StartCoroutine(DefaultCamera.Instance.Shake(8f, 8f, 0.4f));
+                    StartCoroutine(DefaultCamera.Instance.Scale(8f, 0.4f, Ease.OutCirc));
+                    break;
+                }
+            case 2:
+                {
+                    StartCoroutine(DefaultCamera.Instance.MoveTween(transform.position + new Vector3(direction * 5, 2), 1f, Ease.InOutCirc));
+                    StartCoroutine(DefaultCamera.Instance.Scale(12f, 1f, Ease.InOutCirc));
+                    break;
+                }
+            case 3:
+                {
+                    StartCoroutine(DefaultCamera.Instance.Shake(1f, 1f, 1f, false));
+                    break;
+                }
+            case 4:
+                {
+                    DefaultCamera.Instance.followingTarget = true;
+                    StartCoroutine(DefaultCamera.Instance.Scale(10f, 1.2f, Ease.OutCirc));
+                    break;
+                }
+        }
     }
     void MeleeAttack()
     {
@@ -238,32 +335,6 @@ public class TheNew : CR
         MeleeProgress = MeleeProgress % 4 + 1;
     }
 
-    public void DoubleSlash_HitTest()
-    {
-        float DSDamage = GetSkill(1).BaseDamage * damageCR;
-        Vector2 curPos = transform.position;
-        Collider2D[] colliders = Physics2D.OverlapAreaAll(curPos + new Vector2(2.8f * direction, -1), curPos + new Vector2(-2f * direction, 1), LayerMask.GetMask("E-Units"));
-        Vector2 DS_CenterPos = new Vector2();
-
-        foreach (Collider2D E_UnitsHit in colliders)
-        {
-            if (E_UnitsHit.transform == null) continue;
-            DS_CenterPos += (Vector2)E_UnitsHit.transform.position;
-            if (E_UnitsHit.TryGetComponent<EUnits>(out var eu)) eu.GetDamaged(DSDamage);
-            GenSkillEffect((int)SkillSet.DoubleSlash, E_UnitsHit.transform.localPosition);
-
-            UltimateAmount += 3.5f;
-            ParticleSystem pps = Instantiate(particle_prefab_ds, E_UnitsHit.transform.localPosition, Quaternion.identity).GetComponent<ParticleSystem>();
-            pps.Play();
-            Destroy(pps.gameObject, 2f);
-        }
-
-        if (colliders.Length > 0)
-        {
-            DS_CenterPos /= colliders.Length;
-            CallSfx("Damage");
-        }
-    }
 
     public void PsychicAssault_HitTest()
     {

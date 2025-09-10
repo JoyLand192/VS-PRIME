@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42bcba8e01bd5a340a75a638ca52286b, type: 3}
-  m_Name: NewSkill
+  m_Name: 3_Ultimate
   m_EditorClassIdentifier: 
-  SkillName: s
-  TriggerName: s
-  SkillNumber: 123
-  BaseDamage: 123
+  SkillName: Ult
+  TriggerName: Ult
+  SkillNumber: 3
+  BaseDamage: 2
+  Cooldown: 0
   Cancelable: 0
+  Icon: {fileID: 0}

@@ -22,6 +22,7 @@ public class CR : MonoBehaviour
     protected Dictionary<KeyCode, Skill> skillEquippedList = new Dictionary<KeyCode, Skill>();
     protected List<KeyCode> skillKeys = new();
     protected bool dashing = false;
+    protected GameObject ultChargeEff;
     protected Image ultimateCharge
     {
         get
@@ -242,11 +243,14 @@ public class CR : MonoBehaviour
 
     protected void UltChargedEffGen()
     {
-        var UltChargeEff = Instantiate(effectManager.LoadEtcEffect(4), transform);
         if (!ultCharged)
         {
+            ultChargeEff = Instantiate(effectManager.LoadEtcEffect(4), transform);
             ultCharged = true;
             CallSfx("UltimateCharge");
+
+            ultimateVig.gameObject.SetActive(true);
+            ultimateVig.color = new Color(1, 1, 1, 0);
             ultimateVig.DOColor(new Color(1, 1, 1, 160f / 255f), 1f);
         }
     }

@@ -182,7 +182,6 @@ public class CR : MonoBehaviour
     }
     protected void StopChannel()
     {
-        Debug.Log("Channel End");
         stateCR = State.Idle;
         canMove = true;
     }

@@ -15,7 +15,7 @@ MonoBehaviour:
   SkillName: Ult
   TriggerName: Ult
   SkillNumber: 3
-  BaseDamage: 2
+  BaseDamage: 8
   Cooldown: 0
   Cancelable: 0
   Icon: {fileID: 0}

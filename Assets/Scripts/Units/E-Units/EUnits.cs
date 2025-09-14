@@ -161,6 +161,7 @@ public class EUnits : MonoBehaviour
 
     public void GetDamaged(float Damage)
     {
+        if (transform == null) return;
         HP -= Damage;
 
         GameObject text = Instantiate(effectManager.LoadDamageText(1), damageTextCanvas.transform);

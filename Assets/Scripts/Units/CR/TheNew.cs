@@ -27,6 +27,7 @@ public class TheNew : CR
     [SerializeField] KeyCode meleeKey = KeyCode.A;
     [SerializeField] KeyCode ultKey = KeyCode.Q;
     [SerializeField] GameObject particle_prefab_ds;
+    [SerializeField] GameObject particle_prefab_ult;
     [SerializeField] GameObject illusionSwordSlash;
     [SerializeField] GameObject[] meleeEffectPrefabs;
     [SerializeField] GameObject ultimateLaser;
@@ -137,7 +138,7 @@ public class TheNew : CR
             GenSkillEffect((int)SkillSet.DoubleSlash, E_UnitsHit.transform.localPosition);
 
             UltimateAmount += 3.5f;
-            var pps = Instantiate(particle_prefab_ds, E_UnitsHit.transform.localPosition, Quaternion.identity);
+            var pps = Instantiate(particle_prefab_ult, E_UnitsHit.transform.localPosition, Quaternion.identity);
             if (pps.TryGetComponent<ParticleSystem>(out var p)) p.Play();
             Destroy(pps.gameObject, 2f);
         }
@@ -253,8 +254,6 @@ public class TheNew : CR
                 CallSfx(s);
             }
         }
-
-        Debug.Log($"Melee {MeleeProgress}");
     }
     public IEnumerator Melee3Dash()
     {

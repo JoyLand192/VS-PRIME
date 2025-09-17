@@ -206,7 +206,7 @@ public class GameManager : MonoBehaviour
             a.volume = musicVolumeSlider.value * GameStatus.MasterVolume;
         }
     }
-    public void CastTriggerEvent(bool requiresPreviousEvent, int[] requiredNumbers, bool switchBitMask, int number)
+    public void CastTriggerEvent(bool requiresPreviousEvent, int[] requiredNumbers, bool switchBitMask, int number, bool canRepeat, GameObject trigger)
     {
         if (requiresPreviousEvent)
         {
@@ -222,10 +222,12 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        StartCoroutine(CurrentStage.TriggerEvents[number]   );
+        StartCoroutine(CurrentStage.TriggerEvents[number]);
 
         CurrentStage.triggerBitMask = switchBitMask == true ? CurrentStage.triggerBitMask | (1 << number) : CurrentStage.triggerBitMask ^ (1 << number);
         // switchBitMask일 때 1이면 0, 0이면 1로 뒤집기 (AI 아니다)
+
+        if (!canRepeat) Destroy(trigger);
     }
 
     public void CallSfx(string sfx)

@@ -505,9 +505,9 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.41666666
-    functionName: CallSfx
-    data: Slash
+  - time: 0.33333334
+    functionName: IllusionSwordEffGen
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -520,8 +520,8 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.41666666
-    functionName: IllusionSwordEffGen
-    data: 
+    functionName: CallSfx
+    data: Slash
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

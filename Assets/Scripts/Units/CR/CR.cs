@@ -266,7 +266,7 @@ public class CR : MonoBehaviour
     
     public void UpdateUltimateMeter()
     {
-        float lerpf = 4f;
+        float lerpf = 4.5f;
         float tmp = ultimateCharge.fillAmount;
         ultimateCharge.fillAmount = Mathf.Lerp(tmp, UltimateAmount / 100f, lerpf * Time.deltaTime);
     }

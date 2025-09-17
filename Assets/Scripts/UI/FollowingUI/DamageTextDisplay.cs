@@ -12,6 +12,6 @@ public class DamageTextDisplay : UnitsInteractableUI
     void LateUpdate()
     {
         offsetY = Mathf.Lerp(offsetY, offsetYMax, Time.deltaTime * 5f);
-        transform.position = Camera.main.WorldToScreenPoint(followTarget.position) + new Vector3(0, offsetY);
+        if (followTarget != null) transform.position = Camera.main.WorldToScreenPoint(followTarget.position) + new Vector3(0, offsetY);
     }
 }

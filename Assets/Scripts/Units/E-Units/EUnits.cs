@@ -158,7 +158,7 @@ public class EUnits : MonoBehaviour
             rb.velocity = new Vector2(speed * move_dir, rb.velocity.y);
         }
     }
-
+    
     public void GetDamaged(float Damage)
     {
         if (transform == null) return;
@@ -181,7 +181,7 @@ public class EUnits : MonoBehaviour
 
     public void Remove()
     {
-        Destroy(gameObject);
         Destroy(healthBar);
+        Destroy(gameObject);
     }
 }

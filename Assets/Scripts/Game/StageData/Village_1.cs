@@ -11,6 +11,7 @@ public class Village_1 : Stage
         {
             Event1(),
             Event2(),
+            Event3(),
         };
     }
     IEnumerator Event1()
@@ -48,6 +49,25 @@ public class Village_1 : Stage
     }
     IEnumerator Event2()
     {
+        ToggleCrMove(false);
+        ToggleHUD(0f, 0.4f);
+
+        yield return Wait(0.8f);
+
+        var crPos = GameManager.Instance.cr.transform.position;
+
+        yield return MoveCamera((Vector2)crPos + new Vector2(15, 0), 1.2f, "InExpo");
+        yield return MoveCamera((Vector2)crPos + new Vector2(-15, 0), 0f);
+        yield return MoveCamera(crPos, 1.2f, "OutExpo");
+
+        ToggleCrMove(true);
+        ToggleHUD(1f, 0.4f);
+        ToggleCameraFollow(true);
         yield return null;
+    }
+    IEnumerator Event3()
+    {
+        ToggleCrTrigger("ULTIMATE");
+        yield break;
     }
 }

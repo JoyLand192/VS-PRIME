@@ -6,8 +6,8 @@ public class DamageTextDisplay : UnitsInteractableUI
 {
     void Awake()
     {
-        offsetY = 0f;
-        offsetYMax = 64f;
+        offsetY = 80f;
+        offsetYMax = 144f;
     }
     void LateUpdate()
     {
